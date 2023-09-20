@@ -1,0 +1,12 @@
+name: SoulsJourneySpawn
+version: '${project.version}'
+main: org.tenfont.soulsjourneyspawn.SoulsJourneySpawn
+api-version: '1.18'
+depend: [WorldGuard]
+authors: [TenFont]
+
+commands:
+  setspawn:
+    permission: soulsjourneyspawn.admin
+  spawn:
+    description: Teleport to the server spawn.
