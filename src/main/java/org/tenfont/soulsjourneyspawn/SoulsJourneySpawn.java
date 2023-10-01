@@ -5,10 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.tenfont.soulsjourneyspawn.commands.CmdSetSpawn;
 import org.tenfont.soulsjourneyspawn.commands.CmdSpawn;
-import org.tenfont.soulsjourneyspawn.events.DisableSpawnDamage;
-import org.tenfont.soulsjourneyspawn.events.DisableSpawnMobSpawning;
-import org.tenfont.soulsjourneyspawn.events.SlowFall;
-import org.tenfont.soulsjourneyspawn.events.SpawnLeave;
+import org.tenfont.soulsjourneyspawn.events.*;
 import org.tenfont.soulsjourneyspawn.util.MessageUtils;
 
 public final class SoulsJourneySpawn extends JavaPlugin {
@@ -25,6 +22,7 @@ public final class SoulsJourneySpawn extends JavaPlugin {
         getCommand("setspawn").setExecutor(new CmdSetSpawn());
         getCommand("spawn").setExecutor(new CmdSpawn());
 
+        Bukkit.getPluginManager().registerEvents(new DisableBuild(), this);
         Bukkit.getPluginManager().registerEvents(new DisableSpawnDamage(), this);
         Bukkit.getPluginManager().registerEvents(new DisableSpawnMobSpawning(), this);
         Bukkit.getPluginManager().registerEvents(new SlowFall(), this);
